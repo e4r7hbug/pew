@@ -1,5 +1,4 @@
-Pew - Python Env Wrapper
-========================
+# Pew - Python Env Wrapper
 
 [![PyPi version](http://img.shields.io/pypi/v/pew.svg)](https://pypi.python.org/pypi/pew)
 [![Build Status](https://travis-ci.org/berdario/pew.png)](https://travis-ci.org/berdario/pew)
@@ -21,8 +20,7 @@ Pew is completely shell-agnostic and thus works on bash, zsh, fish, powershell,
 etc.
 
 
-Installation
-------------
+## Installation
 
 ### pip
 
@@ -75,8 +73,7 @@ choco python pew
 ```
 
 
-Usage
------
+## Usage
 
 You can create a new virtualenv, with a non-default python and specifying some
 packages to be installed in it, like this:
@@ -172,8 +169,7 @@ Python 2.7.10 (f3ad1e1e1d62, Aug 28 2015, 10:45:29)
 ```
 
 
-Command Reference
------------------
+## Command Reference
 
 When invoked without arguments pew will output the list of all commands with
 each one's description
@@ -416,8 +412,7 @@ usage: pew shell_config
 ```
 
 
-Configuration
--------------
+## Configuration
 
 You can customize pew's virtualenvs directory location, with the
 `$XDG_DATA_HOME` or `$WORKON_HOME` environment variables, and the locations of
@@ -425,8 +420,7 @@ new projects created with mkproject by setting `$PROJECT_HOME` (otherwise, the
 current directory will be selected)
 
 
-Troubleshooting
----------------
+## Troubleshooting
 
 ### The environment doesn't seem to be activated ###
 
@@ -469,8 +463,7 @@ Congratulations! You found a bug, please [let me
 know](https://github.com/berdario/pew/issues/new) :)
 
 
-Running Tests
--------------
+## Running Tests
 
 The test suite for pew uses [tox](http://codespeak.net/tox). Most tests are
 actually integration tests that will fork shells, create virtualenvs and in
@@ -510,8 +503,7 @@ Add new tests by modifying an existing file or creating new script in the tests
 directory.
 
 
-Display the environment name in the terminal prompt
----------------------------------------------------
+## Display the environment name in the terminal prompt
 
 ### bash/zsh ###
 
@@ -557,8 +549,7 @@ trunk at the end, and that I never used virtualenvwrapper's hook first hand, I
 decided to skip them, at least for now.
 
 
-Thanks
-------
+## Thanks
 
 Everyone who submitted patches/PR, as of September 2015:
 
@@ -579,8 +570,7 @@ Thanks also to Michael F. Lamb for his thought provoking gist and to Doug
 Hellman for virtualenvwrapper
 
 
-Rationale
----------
+## Rationale
 
 Pew is written in pure python and leverages
 [inve](https://gist.github.com/datagrok/2199506): the idea for a better
@@ -601,8 +591,7 @@ Python programmers know at a glance what does `"${out_args[@]-}"` do? or `eval
 "envname=\$$#"`?
 
 
-License
--------
+## License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
