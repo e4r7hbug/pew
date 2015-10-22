@@ -29,7 +29,7 @@ might not available on old versions. In case your distribution doesn't ship
 with one recent enough, you'll probably want to run `pip install --upgrade pip`
 before the installation._
 
-```
+```sh
 pip install pew
 ```
 
@@ -48,7 +48,7 @@ There's a Nix package available, you can install it on
 [Nixos](http://nixos.org/) or on [most Unix-like
 OSes](http://nixos.org/nix/download.html):
 
-```
+```sh
 nix-env -i python3.4-pew
 ```
 
@@ -57,7 +57,7 @@ nix-env -i python3.4-pew
 For Ubuntu, there's a
 [PPA](https://launchpad.net/~pew-maintainers/+archive/ubuntu/ppa/)
 
-```
+```sh
 sudo add-apt-repository ppa:pew-maintainers/ppa
 sudo apt-get update
 sudo apt-get install pew
@@ -68,7 +68,7 @@ sudo apt-get install pew
 On Windows, you can install pew with [Chocolatey](http://chocolatey.org) by
 running the following in an elevated permission console:
 
-```
+```sh
 choco python pew
 ```
 
@@ -78,7 +78,7 @@ choco python pew
 You can create a new virtualenv, with a non-default python and specifying some
 packages to be installed in it, like this:
 
-```
+```sh
 ~> pew new --python=pypy -i django myproject
 Running virtualenv with interpreter /home/dario/Applications/bin/pypy
 New pypy executable in myproject/bin/pypy
@@ -103,7 +103,7 @@ Once inside, you can check the current python version, list the packages
 present in its python's site-packages directory, and install additional
 packages like this:
 
-```
+```sh
 myproject ~> python -V
 Python 2.7.3 (b9c3566aa017, May 09 2013, 09:09:14)
 [PyPy 2.0.0 with GCC 4.6.3]
@@ -131,7 +131,7 @@ myproject ~> ^D
 You can also specify a requirements file, to be passed on to pip, and activate
 another virtualenv with workon:
 
-```
+```sh
 ~> pew new -r ~/Projects/topaz/requirements.txt topaz
 New python executable in topaz/bin/python
 [SNIP]
@@ -148,7 +148,7 @@ myproject ~>
 Since 0.1.16, Pew integrates Pythonz, which allows you to easily install a new
 python version (only on linux and macosx)
 
-```
+```sh
 ~> pew install 2.6.1 --type pypy
 WARNING: Linux binaries are dynamically linked, as is usual, and thus might not be usable due to the sad story of linux binary    compatibility,  check the PyPy website for more information
 Downloading pypy-2.6.1-linux64.tar.bz2 as /home/dario/.pythonz/dists/pypy-2.6.1-linux64.tar.bz2
@@ -178,7 +178,7 @@ each one's description
 
 Create a new environment, in the WORKON_HOME.
 
-```
+```sh
 usage: pew new [-hd] [-p PYTHON] [-i PACKAGES] [-a PROJECT] [-r REQUIREMENTS] envname
 ```
 
@@ -195,7 +195,7 @@ The new environment is automatically activated after being initialized.
 
 List or change working virtual environments.
 
-```
+```sh
 usage: pew workon [environment_name]
 ```
 
@@ -206,7 +206,7 @@ to stdout.
 
 Create a temporary virtualenv.
 
-```
+```sh
 usage: pew mktmpenv [-h] [-p PYTHON] [-i PACKAGES] [-a PROJECT] [-r REQUIREMENTS]
 ```
 
@@ -214,7 +214,7 @@ usage: pew mktmpenv [-h] [-p PYTHON] [-i PACKAGES] [-a PROJECT] [-r REQUIREMENTS
 
 List all of the environments.
 
-```
+```sh
 usage: pew ls [-h] [-b | -l]
 ```
 
@@ -223,7 +223,7 @@ usage: pew ls [-h] [-b | -l]
 
 ### show ###
 
-```
+```sh
 usage: pew show [env]
 ```
 
@@ -231,7 +231,7 @@ usage: pew show [env]
 
 Run a command in each virtualenv.
 
-```
+```sh
 usage: pew inall [command]
 ```
 
@@ -239,7 +239,7 @@ usage: pew inall [command]
 
 Run a command in the given virtualenv.
 
-```
+```sh
 usage: pew in [env] [command]
 ```
 
@@ -247,7 +247,7 @@ usage: pew in [env] [command]
 
 Remove one or more environments, from the WORKON_HOME.
 
-```
+```sh
 usage: pew rm envs [envs ...]
 ```
 
@@ -257,19 +257,19 @@ You have to exit from the environment you want to remove.
 
 Use Pythonz to download and build a Python vm
 
-```
+```sh
 usage: pew install [options] version
 ```
 
 To install Python3.5.0
 
-```
+```sh
 pew install 3.5.0
 ```
 
 To install Pypy:
 
-```
+```sh
 pew install 2.6.1 --type pypy
 ```
 
@@ -277,7 +277,7 @@ pew install 2.6.1 --type pypy
 
 List the pythons installed by Pythonz
 
-```
+```sh
 usage: pew list_pythons [options]
 ```
 
@@ -287,7 +287,7 @@ You can list all the Pythons available to install with `-a` or `--all-versions`
 
 Locate the path for the python version installed by Pythonz
 
-```
+```sh
 usage: pew locate_python [options] version
 ```
 
@@ -300,7 +300,7 @@ Copying virtual environments is not well supported. Each virtualenv has path
 information hard-coded into it, and there may be cases where the copy code does
 not know to update a particular file. Use with caution.
 
-```
+```sh
 usage: pew cp [-hd] source [targetenvname]
 ```
 
@@ -321,7 +321,7 @@ Equivalent to `ls $(sitepackages_dir)`.
 Adds the specified directories to the Python path for the currently-active
 virtualenv.
 
-```
+```sh
 usage: pew add [-h] [-d] dirs [dirs ...]
 ```
 
@@ -343,7 +343,7 @@ environment.
 Controls whether the active virtualenv will access the packages in the global
 Python `site-packages` directory.
 
-```
+```sh
 usage: pew toggleglobalsitepackages [-q]
 ```
 
@@ -352,7 +352,7 @@ usage: pew toggleglobalsitepackages [-q]
 Create a new virtualenv in the `WORKON_HOME` and project directory in
 `PROJECT_HOME`.
 
-```
+```sh
 usage: pew mkproject [-hd] [-p PYTHON] [-i PACKAGES] [-a PROJECT] [-r REQUIREMENTS] [-t TEMPLATES] [-l] envname
 ```
 
@@ -370,7 +370,7 @@ inside the `pew` package.
 
 Bind an existing virtualenv to an existing project.
 
-```
+```sh
 usage: pew setproject [virtualenv_path] [project_path]
 ```
 
@@ -382,7 +382,7 @@ assumed.
 Try to restore a broken virtualenv by reinstalling the same python version on
 top of it
 
-```
+```sh
 usage: pew restore env
 ```
 
@@ -391,7 +391,7 @@ usage: pew restore env
 Rename a virtualenv (by copying it over to the new name, and deleting the old
 one)
 
-```
+```sh
 usage: pew rename source target
 ```
 
@@ -399,7 +399,7 @@ usage: pew rename source target
 
 Remove all installed packages from the current (or supplied) env.
 
-```
+```sh
 usage: pew wipeenv [env]
 ```
 
@@ -407,7 +407,7 @@ usage: pew wipeenv [env]
 
 Prints the path for the current $SHELL helper file
 
-```
+```sh
 usage: pew shell_config
 ```
 
@@ -476,26 +476,26 @@ interpreters on travis-ci (for unix-like) and appveyor (for windows).
 To run individual test scripts, run from the top level directory of the
 repository a command like:
 
-```
+```sh
 tox tests/test_setproject.py
 ```
 
 To run tests under a single version of Python, specify the appropriate
 environment when running tox:
 
-```
+```sh
 tox -e py27
 ```
 
 Combine the two modes to run specific tests with a single version of Python:
 
-```
+```sh
 tox -e py27 tests/test_setproject.py
 ```
 
 You can also filter them:
 
-```
+```sh
 tox -e py34 -- -k workon
 ```
 
@@ -525,7 +525,7 @@ function `pew_prompt`. Just use its output in the `fish_prompt` function.
 
 Add this to a prompt function:
 
-```
+```powershell
 Write-Host -NoNewLine -f blue ([System.IO.Path]::GetFileName($env:VIRTUAL_ENV))
 ```
 
